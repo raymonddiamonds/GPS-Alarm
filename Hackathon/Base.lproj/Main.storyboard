@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Nbu-Iy-au5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,10 +20,50 @@
                     <view key="view" contentMode="scaleToFill" id="Kas-lC-5Wj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8EA-qJ-CLg" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="503"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8EA-qJ-CLg" firstAttribute="top" secondItem="thq-r3-78g" secondAttribute="bottom" id="2Ce-xn-6ZO"/>
+                            <constraint firstAttribute="trailing" secondItem="8EA-qJ-CLg" secondAttribute="trailing" id="BvW-cE-iCv"/>
+                            <constraint firstItem="8EA-qJ-CLg" firstAttribute="leading" secondItem="Kas-lC-5Wj" secondAttribute="leading" id="ZLl-Li-HtY"/>
+                            <constraint firstItem="QBF-OU-j9N" firstAttribute="top" secondItem="8EA-qJ-CLg" secondAttribute="bottom" constant="100" id="eCd-qc-HZO"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="o40-R5-KRm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Blf-oM-kvF">
+                            <connections>
+                                <action selector="openSearchAddress:" destination="BYZ-38-t0r" id="y3v-U4-43d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="googleMapsView" destination="8EA-qJ-CLg" id="CM7-g6-iKJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="93.103448275862078"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ehJ-4t-7VX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nbu-Iy-au5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kYu-QQ-wmx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ec8-C9-rI8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0US-gX-zz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="93.103448275862078"/>
         </scene>
