@@ -11,6 +11,7 @@ import GooglePlaces
 import GoogleMaps
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -18,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        GMSPlacesClient.provideAPIKey("AIzaSyDRya3DLy6VT-weK--kGZf27i9y3B5tl4Q")
-        GMSServices.provideAPIKey("AIzaSyDRya3DLy6VT-weK--kGZf27i9y3B5tl4Q")
+        GMSPlacesClient.provideAPIKey("AIzaSyBh7vyTEC5MRbXipkNm_lc1oIuA1jJ8_ng")
+        GMSServices.provideAPIKey("AIzaSyBh7vyTEC5MRbXipkNm_lc1oIuA1jJ8_ng")
 
         return true
     }
