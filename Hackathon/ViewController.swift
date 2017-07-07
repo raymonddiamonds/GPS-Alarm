@@ -15,6 +15,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate , GMSMapViewDe
     
     // OUTLETS
     @IBOutlet weak var googleMapsView: GMSMapView!
+    
+    @IBAction func setAlarmTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func openSearchAddress(_ sender: UIBarButtonItem) {
+        
+        let autoCompleteController = GMSAutocompleteViewController()
+        autoCompleteController.delegate = self
+        
+        self.locationManager.startUpdatingLocation()
+        self.present(autoCompleteController, animated: true, completion: nil)
+        
+    }
 
     
     // VARIABLES
@@ -30,6 +44,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate , GMSMapViewDe
         locationManager.startMonitoringSignificantLocationChanges()
         
         initGoogleMaps()
+        
+        //custom border/colour to the mapView edges
+        googleMapsView.layer.borderWidth = 3
+        googleMapsView.layer.borderColor = UIColor(red:192/255.0, green:192/255.0, blue:192/255.0, alpha: 1.0).cgColor
+        googleMapsView.layer.cornerRadius = 3.5
+        
+
+        
     }
     
     func initGoogleMaps() {
@@ -113,16 +135,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate , GMSMapViewDe
         self.dismiss(animated: true, completion: nil) // when cancel search
     }
     
-    
-    @IBAction func openSearchAddress(_ sender: UIBarButtonItem) {
-        
-        let autoCompleteController = GMSAutocompleteViewController()
-        autoCompleteController.delegate = self
-        
-        self.locationManager.startUpdatingLocation()
-        self.present(autoCompleteController, animated: true, completion: nil)
-        
-    }
+
     
     
     

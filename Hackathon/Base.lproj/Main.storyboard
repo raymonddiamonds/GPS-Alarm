@@ -18,29 +18,63 @@
                         <viewControllerLayoutGuide type="bottom" id="QBF-OU-j9N"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Kas-lC-5Wj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8EA-qJ-CLg" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="503"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="453"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HU9-yR-gDm" userLabel="setAlarm" customClass="RoundButton" customModule="Hackathon" customModuleProvider="target">
+                                <rect key="frame" x="125" y="507" width="124" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.089910559356212616" green="0.22235283255577087" blue="0.42581266164779663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <state key="normal" title="Set Alarm">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="setAlarmTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vYc-B5-29r"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.089910559356212616" green="0.22235283255577087" blue="0.42581266164779663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8EA-qJ-CLg" firstAttribute="top" secondItem="thq-r3-78g" secondAttribute="bottom" id="2Ce-xn-6ZO"/>
+                            <constraint firstItem="QBF-OU-j9N" firstAttribute="top" secondItem="8EA-qJ-CLg" secondAttribute="bottom" constant="150" id="BSj-Wd-yUR"/>
                             <constraint firstAttribute="trailing" secondItem="8EA-qJ-CLg" secondAttribute="trailing" id="BvW-cE-iCv"/>
                             <constraint firstItem="8EA-qJ-CLg" firstAttribute="leading" secondItem="Kas-lC-5Wj" secondAttribute="leading" id="ZLl-Li-HtY"/>
-                            <constraint firstItem="QBF-OU-j9N" firstAttribute="top" secondItem="8EA-qJ-CLg" secondAttribute="bottom" constant="100" id="eCd-qc-HZO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="o40-R5-KRm">
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Geko Alarm" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="AyR-3d-ieN">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.089910559356212616" green="0.22235283255577087" blue="0.42581266164779663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.089910559356212616" green="0.22235283255577087" blue="0.42581266164779663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="25"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="Blf-oM-kvF">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="openSearchAddress:" destination="BYZ-38-t0r" id="y3v-U4-43d"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="googleMapsView" destination="8EA-qJ-CLg" id="CM7-g6-iKJ"/>
                     </connections>
@@ -54,9 +88,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nbu-Iy-au5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kYu-QQ-wmx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="kYu-QQ-wmx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.089910559356212616" green="0.22235283255577087" blue="0.42581266164779663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
