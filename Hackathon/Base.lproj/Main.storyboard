@@ -88,7 +88,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nbu-Iy-au5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="kYu-QQ-wmx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="kYu-QQ-wmx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.089910559356212616" green="0.22235283255577087" blue="0.42581266164779663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
